@@ -1,5 +1,5 @@
 
-import { MAIN_H, MAIN_W } from "@/utils/constants";
+import { MAIN_H, MAIN_W } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 

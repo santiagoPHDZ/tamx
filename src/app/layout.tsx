@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans';
+
 import '@/styles/globals.css'
 import { cookies } from "next/headers";
 
@@ -9,8 +10,8 @@ import { Toaster } from '@/components/ui/toaster';
 
 // Metadata
 export const metadata: Metadata = {
-  title: 'Next Stack App',
-  description: 'The best way to get started',
+  title: 'Grupo TAMX',
+  description: 'We build homes',
 }
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
         <body className={GeistSans.className}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >

@@ -1,79 +1,37 @@
+import ContactForm from "@/components/forms/contact-form"
+import { VStack } from "@/components/stack"
+import { Text } from "@/components/text"
+import { apiServer } from "@/trpc/server"
 import Image from "next/image"
 
+const Page = async () => {
 
-const PROJECTS = [
-        {
-        path: "refugio-entrada.jpg",
-        width: 747,
-        height: 997
-    },
-    {
-        path: "country-entrada.jpg",
-        width: 927,
-        height: 521
-    },
-    {
-        path: "hotel-jardin.jpg",
-        width: 1680,
-        height: 945
-    },
-    {
-        path: "parquecentral-escaleras.jpg",
-        width: 747,
-        height: 997
-    },
-    {
-        path: "parquecentral-jardin.jpg",
-        width: 1066,
-        height: 599
-    },
-    {
-        path: "refugio-terraza.jpg",
-        width: 1066,
-        height: 599
-    },
-    {
-        path: "country-exterior.jpg",
-        width: 927,
-        height: 521
-    },
-    {
-        path: "hotel-acceso.jpg",
-        width: 1020,
-        height: 1360
-    },
-    {
-        path: "hotel-comedor.jpg",
-        width: 1680,
-        height: 935
-    },
-    {
-        path: "hotel-jardin.jpg",
-        width: 1680,
-        height: 945
-    },
-    {
-        path: "realmandinga-todos.jpg",
-        width: 1680,
-        height: 933
-    },
-    {
-        path: "sanjeronimo-pilares.jpg",
-        width: 480,
-        height: 640
-    }
-]
-const Page = () => {
+    const gallery = await apiServer.gallery.getlatest.query()
+
     return (
-        <div className="px-4">
-            <div className="pt-4 pb-8 gap-4 columns-1 md:columns-2 lg:columns-3">
+        <VStack className="px-4 md:px-12 space-y-8 pt-16">
+
+            <VStack className="text-left space-y-2 w-4/6">
+                <Text level={1} className="text-4xl md:text-6xl lg:text-7xl font-black">
+                    Taller de Arquitectura Mexicana
+                </Text>
+                <Text level={2} className=" md:text-lg font-light text-muted-foreground leading-relaxed">
+                    Somos un despacho de Arquitectos que nos enfocamos en cubrir las necesidades de nuestros clientes con un enfoque de satisfacción total.
+                </Text>
+            </VStack>
+
+            <div className="gap-4 columns-1 md:columns-2 lg:columns-3">
                 {
-                    PROJECTS.map((p, i) => (
-                        <Image key={`${p.path}${i}`} src={`/projectos/${p.path}`} alt={p.path} width={p.width} height={p.height} quality={100} className="mb-4 w-full h-auto grayscale hover:grayscale-0" />
+                    gallery.map((g) => (
+                        <div key={g.id} className="grayscale hover:grayscale-0">
+                            <Image src={g.url} alt={g.title ?? ""} width={g.width ?? 0} height={g.height ?? 0} quality={100} className="mb-4 w-full h-auto" />
+                        </div>
                     ))
                 }
             </div>
-        </div>
+
+            <ContactForm />
+        </VStack>
     )
 }
 
