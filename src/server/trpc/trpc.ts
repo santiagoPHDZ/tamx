@@ -1,7 +1,6 @@
 
 import { TRPCError, initTRPC } from '@trpc/server';
 import superjson from 'superjson'
-import { currentUser } from '@clerk/nextjs';
 import { ZodError } from 'zod';
 
 // Create context
@@ -19,10 +18,8 @@ interface CreateContextOptions {
 // that goes through your tRPC endpoint.
 
 export const createTRPCContext = async (opts: CreateContextOptions) => {
-  const session = await currentUser();
 
   return {
-    session,
     ...opts
   }
 };

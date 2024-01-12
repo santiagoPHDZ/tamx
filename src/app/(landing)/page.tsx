@@ -68,8 +68,8 @@ const Page = () => {
         <div className="px-4">
             <div className="pt-4 pb-8 gap-4 columns-1 md:columns-2 lg:columns-3">
                 {
-                    PROJECTS.map((p) => (
-                        <Image key={p.path} src={`/projectos/${p.path}`} alt={p.path} width={p.width} height={p.height} quality={100} className="mb-4 w-full h-auto grayscale hover:grayscale-0" />
+                    PROJECTS.map((p, i) => (
+                        <Image key={`${p.path}${i}`} src={`/projectos/${p.path}`} alt={p.path} width={p.width} height={p.height} quality={100} className="mb-4 w-full h-auto grayscale hover:grayscale-0" />
                     ))
                 }
             </div>
