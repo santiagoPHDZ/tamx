@@ -11,7 +11,7 @@ const Page = async () => {
     return (
         <VStack className="px-4 md:px-12 space-y-8 pt-16">
 
-            <VStack className="text-left space-y-2 w-4/6">
+            <VStack className="text-left space-y-2 w-2/3">
                 <Text level={1} className="text-4xl md:text-6xl lg:text-7xl font-black">
                     Taller de Arquitectura Mexicana
                 </Text>
