@@ -2,7 +2,7 @@
 import { AlertCircle, CheckCircle, Loader2 } from "lucide-react";
 import { VStack } from "./stack";
 import { Text } from "./text";
-import { cn } from "@/utils/utils";
+import { cn } from "@/lib/utils";
 
 export type IndicatorType = {
     header: string,
