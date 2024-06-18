@@ -8,7 +8,6 @@ import { ThemeToggle } from "./theme-toggle"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog"
-import ContactForm from "./forms/contact-form"
 import { ROUTES } from "@/lib/routes"
 
 const NavBar = () => {
