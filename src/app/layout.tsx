@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans';
 
@@ -25,7 +26,7 @@ export default function RootLayout({
         <body className={GeistSans.className}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >

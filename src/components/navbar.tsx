@@ -1,9 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import NavbarContainer from "./containers/navbar-container"
-import { HStack } from "./stack"
-import { Text } from "./text"
 import { Button } from "./ui/button"
 import { Menu, Phone } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
@@ -12,67 +9,46 @@ import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog"
 import ContactForm from "./forms/contact-form"
+import { ROUTES } from "@/lib/routes"
 
-const PAGES = [
-    {
-        label: "Proyectos",
-        path: "/projects"
-    },
-    {
-        label: "Constructora",
-        path: "/construction"
-    },
-    {
-        label: "Inmuebles",
-        path: "/real-estate"
-    },
-    {
-        label: "Materiales & Maquinaria",
-        path: "/materials"
-    },
-    {
-        label: "Software",
-        path: "/software"
-    },
-]
 const NavBar = () => {
 
     const pathname = usePathname()
 
     return (
-        <nav>
-            <NavbarContainer className="border-b top-0 z-30 bg-background">
-                <HStack className="w-full h-14 items-center justify-between">
+        <nav className="border-b fixed top-0 z-50 bg-background/60 w-full flex items-center justify-center backdrop-blur-md">
 
-                    <HStack className="items-center justify-center space-x-6">
-                        <Link
-                            href="/"
-                        >
-                            <Text level={1} className=" text-xl font-normal pr-4 flex">
-                                Grupo <span className="ml-1 text-xl font-extrabold">TAMX</span>
-                            </Text>
-                        </Link>
+            <div className="w-full flex items-center justify-between h-16 px-6">
 
-                        {/* <div className="hidden md:flex items-center justify-center space-x-6">
-                            {
-                                PAGES.map((p) => (
-                                    <Link
-                                        key={p.path}
-                                        href={p.path}
-                                    >
-                                        <Text level={4} className={cn("text-sm font-light", p.path === pathname ? " text-primary" : "text-secondary-foreground/50")}>
-                                            {p.label}
-                                        </Text>
-                                    </Link>
+                <div className="flex items-center justify-center space-x-6">
+                    <Link
+                        href="/"
+                    >
+                        <h2 className=" text-xl font-normal pr-4 flex">
+                             <span className="ml-1 text-xl font-extrabold">TAMX</span>
+                        </h2>
+                    </Link>
 
-                                ))
-                            }
-                        </div> */}
-                    </HStack>
+                    <div className="flex items-center justify-center space-x-6">
+                        {
+                            ROUTES.map((p) => (
+                                <Link
+                                    key={p.path}
+                                    href={p.path}
+                                >
+                                    <p className={cn("text-sm font-light hover:border-b hover:text-primary hover:border-primary transition duration-300 ease-in-out", p.path === pathname ? " text-primary" : "text-secondary-foreground/50")}>
+                                        {p.label}
+                                    </p>
+                                </Link>
 
-                    <HStack className="items-center justify-center space-x-4">
+                            ))
+                        }
+                    </div>
+                </div>
 
-                        {/* <DropdownMenu >
+                {/* <HStack className="items-center justify-center space-x-4"> */}
+
+                {/* <DropdownMenu >
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" size="icon" className=" md:hidden">
                                     <Menu className="h-6 w-6" />
@@ -94,7 +70,7 @@ const NavBar = () => {
                                 }
                             </DropdownMenuContent>
                         </DropdownMenu> */}
-
+                {/* 
                         <Dialog>
                             <DialogTrigger asChild>
                                 <Button variant="ghost" size="icon">
@@ -106,10 +82,9 @@ const NavBar = () => {
                             </DialogContent>
                         </Dialog>
 
-                        <ThemeToggle />
-                    </HStack>
-                </HStack>
-            </NavbarContainer>
+                        <ThemeToggle /> */}
+                {/* </HStack> */}
+            </div>
         </nav>
     )
 }
