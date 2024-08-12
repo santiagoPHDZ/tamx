@@ -35,13 +35,14 @@ export default function NumberTicker({
     () =>
       springValue.on("change", (latest) => {
         if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat("en-US").format(
-            latest.toFixed(0),
-          );
+          // Convert the string result of toFixed to a number
+          const numberValue = parseFloat(latest.toFixed(0));
+          ref.current.textContent = Intl.NumberFormat("en-US").format(numberValue);
         }
       }),
-    [springValue],
+    [springValue]
   );
+  
 
   return (
     <span
