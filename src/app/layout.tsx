@@ -11,9 +11,12 @@ import { Toaster } from '@/components/ui/toaster';
 
 // Metadata
 export const metadata: Metadata = {
-  title: 'Grupo TAMX',
-  description: 'We build homes',
+  title: 'Grupo TAM',
+  description: 'Despacho de Arquitectos enfocados en la satisfacción del cliente',
 }
+
+import { Inter } from 'next/font/google'
+const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
@@ -23,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <TRPCReactProvider cookies={cookies().toString()}>
-        <body className={GeistSans.className}>
+        <body className={inter.className}>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
-            enableSystem
+            // enableSystem
             disableTransitionOnChange
           >
             {children}

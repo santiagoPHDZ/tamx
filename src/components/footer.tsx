@@ -4,11 +4,11 @@ import { ROUTES } from "@/lib/routes";
 const Footer = () => {
 
     return (
-        <footer className="max-w-5xl px-6 w-full flex flex-col items-center justify-center mx-auto gap-8">
+        <footer className="w-full flex flex-col items-center justify-center mx-auto gap-8">
 
             <div className="w-full border-t" />
 
-            <div className="flex flex-col md:flex-row justify-between items-start w-full gap-8">
+            <div className="px-4 flex flex-col md:flex-row justify-between items-start w-full gap-8">
 
                 {/* 1st block */}
                 <div className="sm:col-span-12 lg:col-span-3">
@@ -79,7 +79,7 @@ const Footer = () => {
 
             <div className="w-full border-t" />
 
-            <div className="md:flex w-full md:items-center md:justify-between pb-8">
+            <div className="px-4 md:flex w-full md:items-center md:justify-between pb-8">
                 <div className="text-sm text-gray-600 mr-4">&copy; tamx.mx. All rights reserved.</div>
             </div>
 
