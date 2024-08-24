@@ -111,7 +111,7 @@ const ContactUsForm = () => {
                         />
 
                         <Button disabled={isLoading} type="submit" variant="default">
-                            <ArrowUpRight className="h-5 w-5 mr-1" />  Submit
+                            <ArrowUpRight className="h-5 w-5 mr-1" />  Enviar
                         </Button>
 
                     </form>

@@ -22,7 +22,7 @@ const Map = () => {
                 transition={{ duration: 0.5, stagger: 0.25 }}
             >
 
-
+{/* 
                 <div className="relative flex w-full group">
 
                     <AspectRatio ratio={16 / 9} className="rounded-none w-full overflow-hidden">
@@ -38,13 +38,13 @@ const Map = () => {
 
                     <div className="absolute inset-0 bg-background/30 rounded-lg"></div>
 
-                </div>
+                </div> */}
 
-                <div className="text-left w-full">
+                {/* <div className="text-left w-full">
                     <p className=" md:text-base font-light text-muted-foreground ">
                         Mapa de las ciudades donde hemos desarrollado proyectos.
                     </p>
-                </div>
+                </div> */}
 
                 <Link
                     href="/projects"
